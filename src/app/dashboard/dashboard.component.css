@@ -1,0 +1,30 @@
+.card{
+    position: relative;
+
+}
+.card-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    background: rgba(255,255,255,0.8);
+    -webkit-transition: all 300ms ease-in-out 0s;
+    -moz-transition: all 300ms ease-in-out 0s;
+    transition: all 300ms ease-in-out 0s;
+  }
+
+  .card:hover .card-body{
+    opacity:1;
+    visibility: visible;
+  }
+
+  .card-title{
+    font-size: 25px;
+    color: chocolate;
+  }

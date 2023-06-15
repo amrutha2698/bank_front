@@ -1,0 +1,193 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand text-light" routerLink="">
+                <i class="fa-solid fa-building-columns fa-beat-fade" style="color: #0000ff;"></i>
+                Union Bank</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="material-symbols-outlined">
+                        settings
+                    </span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a (click)="logout()"class="dropdown-item"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #ff8040;"></i>Logout</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" href="#staticBackdropdelete"><i class="fa-solid fa-trash" style="color: #ff8000;"></i> Remove</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<div>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Welcome <span> {{user}}</span> </h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam tempora quos tempore perspiciatis
+                    possimus neque recusandae officia aliquid quia? Inventore, blanditiis doloribus quia a veniam
+                    laborum fugit illum commodi consequatur!</p>
+
+                <div class="collapse" id="collapseExample">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus ullam, laboriosam sint
+                        doloribus eum earum quia quae accusantium quasi debitis necessitatibus maxime sapiente error
+                        itaque quis fuga fugit sunt voluptatum. Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Beatae, at quia optio atque nobis quos totam similique qui cupiditate aliquam, nostrum
+                        iste vero iusto corrupti ex. Quia necessitatibus quae accusamus.
+                    </p>
+                </div>
+                <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#collapseExample">Read
+                    <span>more</span>
+
+                </button>
+
+            </div>
+            <div class="col-md-6">
+                <img style="width: 100%; height: 300px;"
+                    src="https://img.freepik.com/free-vector/banking-industry-concept-illustration_114360-13934.jpg?w=740&t=st=1686767117~exp=1686767717~hmac=01d813ccd81af5618957a58a26e5ea19dcbb015285f7434eb2e4ad6bb677a805"
+                    alt="">
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5">
+            <div class="col-md-12">
+                <h2 class="d-flex justify-content-center align-items-center"> ---Our Services---</h2>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div (click)="getBalance()" class="card btn" style="width: 18rem;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample">
+                    <div class="image">
+                        <img class="card-img-top" src="https://res.9appsinstall.com/group6/M00/04/A0/868BD3FC14A2E5FF0EC1166A991EA9F0.png?x-oss-process=style/mq200" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Balance Enquiry</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- fund transfer -->
+            <div class="col-md-4">
+                <div class="card btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="width: 18rem;">
+                    <div class="image">
+                        <img class="card-img-top" src="https://dcbuttarkashi.com/wp-content/uploads/2020/03/Fund-Transfer-Feature-Img.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Fund Transfer</h5>
+                    </div>
+                </div>
+            </div>
+            <!-- transaction -->
+            <div class="col-md-4">
+                <div routerLink="/transactions" class="card" style="width: 18rem;">
+                    <div class="image">
+                        <img class="card-img-top" src="https://png.pngtree.com/png-clipart/20220111/original/pngtree-flat-h5-financial-transaction-scenario-png-image_7089028.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Mini Statements</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer style="width:100%;padding:20px 0;background-color:rgb(33, 37, 41);" class="text-center text-light">
+    <p style="margin:0">&copy All Rights reserved &reg; Union Bank</p>
+</footer>
+
+
+<!-- balance offcanvas -->
+
+<div *ngIf="showOffcanvas" class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Bank enquiry</h5>
+      <button  type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <img src="https://img.freepik.com/free-vector/mobile-banking-concept-illustration_114360-12788.jpg?size=626&ext=jpg&ga=GA1.2.756553777.1686763838&semt=ais" alt="">
+        </div>
+      <div>
+        <h4>Hello {{user}}</h4>
+        <p>your Current balance is : <span class="fw-bolder fs-3 text-danger">{{balance}}</span></p> 
+      </div>
+     
+      </div>
+    </div>
+
+    <!-- fund transfer -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Fund Transfer Form</h5>
+          <button type="button" (click)="cancelTransfer()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- form -->
+          <form [formGroup]="transferForm">
+            <!-- credit account -->
+            <div class="form-floating mb-3">
+                <input name="creditAmount" formControlName="creditAcno" type="text" class="form-control" id="floatingInput" placeholder="credit Account">
+                <label for="floatingInput">Credit Account</label>
+              </div>
+              <!-- validation acno -->
+              <div *ngIf="this.transferForm.get('creditAcno')?.errors && this.transferForm.get('creditAcno')?.touched" class="mt-2 text-danger">Invalid credit Account </div>
+
+              <!-- credit amount -->
+                <div class="form-floating">
+                <input name="creditAmount" formControlName="creditAmount" type="text" class="form-control" id="amount" placeholder="Password">
+                <label for="floatingPassword">Credit Amount</label>
+              </div>
+              <!-- validation amount -->
+              <div *ngIf="this.transferForm.get('creditAmount')?.errors && this.transferForm.get('creditAmount')?.touched" class="mt-2 text-danger">Invalid credit Amount </div>
+
+              <!-- password -->
+                <div class="form-floating">
+                <input name="password" formControlName="profilePswd" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+              </div>
+              <!-- validation password -->
+              <div *ngIf="this.transferForm.get('profilePswd')?.errors && this.transferForm.get('profilePswd')?.touched" class="mt-2 text-danger">Invalid Password </div>
+               <div *ngIf="transferSuccessMsg" class="fs-4 text-success">
+                {{transferSuccessMsg}} ...please wait 5 seconds to perform another transaction
+               </div>
+               <div class="fs-4 text-danger">
+                {{transferFailMsg}}
+               </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" (click)="cancelTransfer()" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button (click)="transfer()" type="button" [disabled]="!handleTransfer" class="btn btn-primary">Transfer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdropdelete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Delete Account Confirmation</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure,do you want to delete this Account</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button (click)="deleteMyAcno()" data-bs-dismiss="modal" type="button" class="btn btn-primary">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>

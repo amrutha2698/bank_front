@@ -1,0 +1,68 @@
+<div class="container">
+    <!-- header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <i class="fa-solid fa-building-columns fa-fade" style="color: blue;"></i> &nbsp; &nbsp;
+            <a class="navbar-brand text-primary fw-bolder" routerLink="">Union Bank</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!-- section -->
+      <section>
+        <div class="sectiondiv">
+          <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                    <br>
+                    <h3>Welcome to <span class="text-primary">Union Bank</span> 
+                    <br> Login here
+                    </h3>
+                    <!-- register form -->
+                    <form [formGroup]="loginForm" class="border rounded border-dark-subtle p-5" (ngSubmit)="login()">
+                      <!-- input items -->                                        
+                      <!-- Account Number -->
+                      <div class="mb-2">
+                        <input name="acno" formControlName="acno" type="text" placeholder="Account Number" class="form-control">
+                      </div>
+                       <!-- validation acno -->
+                       <div *ngIf="this.loginForm.get('acno')?.errors&&this.loginForm.get('acno')?.touched" class="mt-2 text-danger">
+                        Invalid acno   
+                      </div>
+                      <!-- Password -->
+                      <div class="mb-2">
+                        <input name="password" formControlName="password" type="password" placeholder="Password" class="form-control">
+                      </div>    
+                         <!-- validation ps -->
+                         <div *ngIf="this.loginForm.get('password')?.errors&&this.loginForm.get('password')?.touched" class="mt-2 text-danger">
+                          Invalid password   
+                        </div>                
+                      <br>
+                      
+                      <div class="mb-2 text-center">
+                        
+                        <div class="row button">
+                          <button type="submit" class="lgbtn mb-3" >
+                           <span>Login</span>
+                            <div *ngIf="isLoading" class="spinner-border text-dark " role="status">
+                              <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </button>
+                              <a routerLink="" class="btn btn-warning ">Close</a>
+                         </div>
+                      </div>      
+                    </form>
+            </div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </section>
+      <br><br><br><br><br>   
+</div>

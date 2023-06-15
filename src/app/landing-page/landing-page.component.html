@@ -1,0 +1,53 @@
+<!-- header -->
+<header style="width:100%;height:490px;background-image: url(https://img.freepik.com/free-vector/online-bill-payment-via-mobile-phone-concept_107791-16971.jpg?w=900&t=st=1684163827~exp=1684164427~hmac=85e0f6b57e984dc0963e815ec093a998ea575ddbdfcb438ae9b4eb34470909aa);object-fit: cover; background-size: contain; background-repeat: no-repeat;">
+
+    <!-- navbar -->
+    <nav style="z-index:1;"class="navbar navbar-expand-lg bg-transparent">
+      <div class="container-fluid">
+        <i class="fa-solid fa-building-columns fa-beat" style="color: #1968f0;"></i>&nbsp;&nbsp;
+        <a class="navbar-brand text-primary fw-bolder">Union Bank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a routerLink="login" class="btn text-primary fw-bolder">SignIn</a>
+              <a routerLink="register" class="btn text-success fw-bolder" >Join Now</a>
+               </li>
+             </ul>
+           </div>
+      </div>
+    </nav>
+    </header>
+    <!-- content -->
+    <section  style="height:100vh"class="container m-5">
+      <div class="row mt-5">
+        <div class="col-lg-5">
+          <img width="300px" height="200px"class="img-fluid" src="https://www.synchronybank.com/images/gumball_gif.gif" alt="bank image">
+        </div>
+        <!-- <div class="col-lg-1"></div> -->
+        <div class="col-lg-5">
+        <h1>Welcome To 
+        <span class="text-primary fw-bolder">Union Bank</span>
+      </h1>
+      <p style="text-align:justify;" class="mt-2">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, officiis. At assumenda error, voluptate ipsam dolorem esse tenetur dolorum, voluptatibus velit praesentium ut animi nesciunt mollitia laborum ullam. Nisi, dolorum!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates deleniti quae illum fugiat quam illo iste mollitia explicabo commodi aspernatur asperiores delectus, blanditiis perspiciatis sint animi? Labore quibusdam quia perspiciatis?
+      </p>
+      <div class="collapse" id="collapseExample">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, dolorem neque totam molestiae laborum, iusto debitis itaque quod, mollitia dolores harum quo! Quibusdam, quisquam maxime repudiandae fugit inventore quasi numquam.
+    
+      </div>
+      <button (click)="collapse()"data-bs-toggle="collapse" data-bs-target="#collapseExample" class="btn btn-primary mt-1">Read <span *ngIf="isCollapse">More</span>
+        <span *ngIf="!isCollapse">Less</span>
+      </button>
+    
+    </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <footer style="width:100%; height:50px; background-color: rgb(3, 15, 15);">
+      <p class="text-center text-light mt-5">&copy; All rights reserved &reg;
+      <i  class="fa-solid fa-building-columns"></i>
+         union bank</p>
+    
+    </footer>

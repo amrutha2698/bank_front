@@ -1,0 +1,18 @@
+/* .container{
+    width:500px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+} */
+.aric{
+    padding: 0px;
+    margin:10px 55px;
+}
+.logbtn a{
+    position: absolute;
+    margin-top: 80px;
+    left: 85px;
+}
+.lgfrmn{
+    padding: 47px 122px;
+}

@@ -1,0 +1,57 @@
+<header style="height:300px; width:100%;background-image: url(https://img.freepik.com/free-vector/online-bill-payment-via-mobile-phone-concept_107791-16971.jpg?w=900&t=st=1684163827~exp=1684164427~hmac=85e0f6b57e984dc0963e815ec093a998ea575ddbdfcb438ae9b4eb34470909aa); object-fit: cover; background-repeat: no-repeat;background-position: center;">
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container-fluid">
+          <i class="fa-solid fa-building-columns fa-beat" style="color: #1968f0;"></i>&nbsp;&nbsp;
+          <a class="navbar-brand text-primary fw-bolder">Union Bank</a>
+        </div>
+    </nav>
+</header>
+<marquee  bgcolor="bisque" behavior="" direction="">Welcome To Union bank...</marquee>
+<div class="container-fluid mt-5">
+    <h2 class="mt-2" >Union Bank</h2>
+    <p class="mt-2" style="text-align: justify;">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae similique delectus quibusdam atque nihil, asperiores voluptatum fuga iusto incidunt. Ad delectus eligendi amet, iure non culpa quasi eaque odit doloremque!Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione quam laboriosam in, nemo atque rerum unde est obcaecati iusto eius, illum quos eaque ea fugiat tempora hic eum ipsam nisi.
+    </p>
+    <div class="row mt-5">
+        <div class="col-lg-4 d-flex logbtn">
+            
+            <div class="align-items-center justify-content-center">
+                <!-- login option -->
+                <p>Already a user? Click Below To <span class="fw-bolder">Login</span></p>
+                <img class="mt-2 aric" width="100" height="50" src="https://cdn-icons-png.flaticon.com/512/5093/5093064.png" alt="down-arrow">
+                <a routerLink="/login" class="btn btn-dark ">LogIn</a>
+            </div>
+         </div>
+        <div class="col-lg-8  lgfrmn  rounded mt-2">
+            <h3>Sign Up...</h3>
+            <!-- register form -->
+            <form [formGroup]="registerForm" class="mt-3" (ngSubmit)="register()">
+                <div class="mt-2">
+                    <input name="username" placeholder="username" formControlName="username" type="text" class="form-control">
+                </div>
+                <!-- validation username -->
+                <div *ngIf="this.registerForm.get('username')?.errors && this.registerForm.get('username')?.touched" class="mt-2 text-danger">Invalid Username </div>
+                <div class="mt-2">
+                    <input name="account" placeholder="Account Number" formControlName="account"type="text" class="form-control">
+                </div>
+                <!-- validation account -->
+                <div *ngIf="this.registerForm.get('account')?.errors && this.registerForm.get('account')?.touched" class="mt-2 text-danger">Invalid Account Number </div>
+                <div class="mt-2">
+                    <input  name="password" placeholder="password" formControlName="password" type="password" class="form-control">
+                    <!-- validation password -->
+                <div *ngIf="this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched" class="mt-2 text-danger">Invalid password </div>
+                </div>
+                <div class="mt-2">
+                    <input value="Register" type="submit" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer style="width:100%; height:50px; background-color: rgb(3, 15, 15);">
+    <p class="text-center text-light mt-5">&copy; All rights reserved &reg;
+    <i  class="fa-solid fa-building-columns"></i>
+       union bank</p>
+  
+  </footer>
